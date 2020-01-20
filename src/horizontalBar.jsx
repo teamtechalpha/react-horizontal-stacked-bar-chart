@@ -77,6 +77,8 @@ export default class HorizontalBar extends Component {
       return (
         <div
           key={index}
+          onClick={bar.onClick}
+          className={"bar " + bar.name}
           style={{
             position: "relative",
             float: "left",
@@ -87,7 +89,7 @@ export default class HorizontalBar extends Component {
           {showTextInsteadValue && bar.name}
           {showTextInsteadValue && bar.name && showTextWithValue ? ": " : ""}
           {(!showTextInsteadValue || showTextWithValue) &&
-            (bar.description || bar.value || "")}
+            (<span>{(bar.description || bar.value || "")}</span>)}
         </div>
       );
     });
@@ -103,6 +105,7 @@ export default class HorizontalBar extends Component {
         return (
           <g key={index}>
             <rect
+              onClick={bar.onClick}
               width={`${bar.barWidth + 0.1}%`}
               height={this.props.height}
               style={{
@@ -125,7 +128,7 @@ export default class HorizontalBar extends Component {
             )}
             <title>{`${bar.name || ""}${
               bar.name ? ": " : ""
-            }${bar.description || bar.value || "1"}`}</title>
+              }${bar.description || bar.value || "1"}`}</title>
           </g>
         );
       })
