@@ -7,14 +7,10 @@
 
 React horizontal stacked bar responsive chart component.
 
-## Example
-
-[![HSBar](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/9k2jqjr9y)
-
 ## Installation via NPM
 
 ```bash
-npm install react-horizontal-stacked-bar-chart --save
+npm install --save https://github.com/teamtechalpha/react-horizontal-stacked-bar-chart.git
 ```
 
 ## Usage
